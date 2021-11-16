@@ -7,8 +7,9 @@
   $sql = 'SELECT * FROM users';
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
+  $rowcount = $stmt->$num_rows;
   $details = $stmt->fetch();
 
-  print_r ($details);
+  print_r ($rowcount);
 ?>
 
