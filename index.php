@@ -21,11 +21,10 @@
    
  ?>
 
-
 <html>
   <body>
     <h2>CREATE</h2>
-
+    <a class="nav-link" href="view.php">VIEW</a>
     <form action="" method="POST">
       <fieldset>
         <legend>Insert Info</legend>
