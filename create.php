@@ -1,7 +1,7 @@
-<?php
-    include "config/db.php";
-    include "config/config.php";
+<?php include ('config/db.php')?>
+<?php include ('config/config.php')?>
 
+<?php
    if (isset($_POST['submit'])) {
 
        $first_name = $_POST['firstname'];
@@ -21,7 +21,5 @@
    }
 
    $conn->close();
-
-
 ?>
 
