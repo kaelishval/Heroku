@@ -11,11 +11,11 @@
   
     print_r ($details);
 
-    while( $row = $stmt->fetch_assoc() !==false){
-        echo $row['firstname']. '<br>';
-        echo $row['lastname']. '<br>';
-        echo $row['email']. '<br>';
-        echo $row['gender']. '<br>';
+    while( $details !== false){
+        echo $details['firstname']. '<br>';
+        echo $details['lastname']. '<br>';
+        echo $details['email']. '<br>';
+        echo $details['gender']. '<br>';
     }
 
 ?>
