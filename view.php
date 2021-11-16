@@ -15,6 +15,7 @@
 <body>
     <div class="container">
         <h2>USERS</h2>
+        <a class="nav-link" href="index.php">BACK</a>
     <table class="table">
          <head>
              <tr>
