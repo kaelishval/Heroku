@@ -19,6 +19,7 @@
     <table class="table">
          <head>
              <tr>
+             <th>ID</th>
                  <th>First Name</th>
                  <th>Last Name</th>
                  <th>Email</th>
@@ -33,6 +34,7 @@
                 
                 ?>        
                   <tr>
+                     <td><?php echo $row['id']; ?> </td>
                       <td><?php echo $row['firstname']; ?> </td>
                       <td><?php echo $row['lastname']; ?> </td>
                       <td><?php echo $row['email']; ?> </td>
