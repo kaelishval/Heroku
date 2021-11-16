@@ -17,7 +17,7 @@
        echo "NEW RECORD CREATED SUCCESSFULLY";
 
    }else{
-    echo "Error:" .$sql."<br>".$conn->error;
+    echo "ERRORRR";
    }
 
    $conn->close();
