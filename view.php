@@ -7,6 +7,9 @@
     $statement = $pdo->query($sql);
     while (($row = $statement->fetch(PDO::FETCH_ASSOC)) !== false) {
         echo $row['firstname'] . '<br>';
+        echo $row['lastname'] . '<br>';
+        echo $row['email'] . '<br>';
+        echo $row['gender'] . '<br>';
     }
 ?>
 
