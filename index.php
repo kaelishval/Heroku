@@ -3,9 +3,9 @@
 
 
    <?php
-   echo 'This is Index Page';
+   
  
-   $sql = 'SELECT * FROM users';
+   $sql = "INSERT INTO users (firstname,lastname,email,gender) VALUES ('karl','mauro','kaelishvali','male')";
    $stmt = $pdo->prepare($sql);
    $stmt->execute();
    $rowCount = $stmt->rowCount();
