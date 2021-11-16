@@ -26,7 +26,7 @@
   <body>
     <h2>CREATE</h2>
 
-    <form action="create.php" method="POST">
+    <form action="" method="POST">
       <fieldset>
         <legend>Insert Info</legend>
 
