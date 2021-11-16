@@ -11,7 +11,7 @@
    $rowCount = $stmt->rowCount();
    $details = $stmt->fetch();
   
-   echo $details;
+   print_r ($details);
  ?>
 
 
