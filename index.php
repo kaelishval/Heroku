@@ -12,6 +12,9 @@
    $details = $stmt->fetch();
   
    print_r ($details);
+   echo $details[firstname];
+   
+
  ?>
 
 
