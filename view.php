@@ -19,7 +19,7 @@
     <table class="table">
          <head>
              <tr>
-             <th>ID</th>
+            
                 <th>User ID</th>
                  <th>First Name</th>
                  <th>Last Name</th>
@@ -40,7 +40,7 @@
                       <td><?php echo $row['lastname']; ?> </td>
                       <td><?php echo $row['email']; ?> </td>
                       <td><?php echo $row['gender']; ?> </td>
-                      <td><a class="btn btn-info" href="update.php?id=<?php echo $row['id']; ?> ">EDIT</a>&nbsp; <a class="btn btn-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete</a></td> 
+                      <td><a class="btn btn-info" href="update.php?id=<?php echo $row['userid']; ?> ">EDIT</a>&nbsp; <a class="btn btn-danger" href="delete.php?id=<?php echo $row['userid']; ?>">Delete</a></td> 
                     </tr>
                 <?php }
                 
