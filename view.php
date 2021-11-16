@@ -9,6 +9,14 @@
     $rowCount = $stmt->rowCount();
     $details = $stmt->fetch();
   
-    print_r ($rowCount);
+    print_r ($details);
+
+    while( $row = $stmt->fetch_assoc() !==false){
+        echo $row['firstname']. '<br>';
+        echo $row['lastname']. '<br>';
+        echo $row['email']. '<br>';
+        echo $row['gender']. '<br>';
+    }
+
 ?>
 
