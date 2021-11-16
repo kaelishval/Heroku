@@ -9,7 +9,7 @@
     $rowCount = $stmt->rowCount();
     $details = $stmt->fetch();
   
-    print_r ($details);
+    
 
     while( $details !== false){
         echo $details['firstname']. '<br>';
@@ -17,6 +17,6 @@
         echo $details['email']. '<br>';
         echo $details['gender']. '<br>';
     }
-
+    print_r ($details);
 ?>
 
