@@ -11,9 +11,19 @@
    }
    $sql = "INSERT INTO 'users' ('firstname','lastname','email','gender') VALUES ('$first_name','$last_name','$email','$gender')";
 
-   $result = $conn->query($sql); if($result == TRUE){ echo "NEW RECORD CREATED
-SUCCESSFULLY"; }else{ echo "Error:" .$sql."<br />".$conn->error; }
-$conn->close(); ?>
+   $result = $conn->query($sql);
+
+   if($result == TRUE){
+       echo "NEW RECORD CREATED SUCCESSFULLY";
+
+   }else{
+    echo "Error:" .$sql."<br>".$conn->error;
+   }
+
+   $conn->close();
+
+
+?>
 
 <!DOCTYPE html>
 <html>
