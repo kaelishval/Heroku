@@ -1,17 +1,19 @@
 <?php include ('config/db.php')?>
 <?php include ('config/config.php')?>
 
-<?php
-   if ($_POST['submit']=="save"){
 
-       $first_name = $_POST['firstname'];
-       $last_name = $_POST['lastname'];
-       $email = $_POST['email'];
-       $gender =  $_POST['gender'];
-   }
-   $sql = "INSERT INTO users (firstname,lastname,email,gender) VALUES ($first_name,$last_name,$email,$gender)";
-   console.log($sql);
-?>
+   <?php
+   //echo 'This is Index Page';
+ 
+   $sql = 'SELECT * FROM users';
+   $stmt = $pdo->prepare($sql);
+   $stmt->execute();
+   $rowCount = $stmt->rowCount();
+   $details = $stmt->fetch();
+  
+   print_r ($details);
+ ?>
+
 
 <html>
   <body>
