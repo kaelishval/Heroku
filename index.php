@@ -22,10 +22,7 @@
     $sql = $conn->prepare("INSERT INTO users (firstname,lastname,email,gender) VALUES ('$first_name','$last_name','$email','$gender')");
     $sql->execute();
 
-    echo "NEW records created Succesfully";
-
-    $stmt->close();
-    $conn->close();
+   
  ?>
 
 
