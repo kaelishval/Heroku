@@ -4,9 +4,8 @@
  if(isset($_GET['userid'])){
      $user_id=$_GET['userid'];
 
-$sql = "DELETE FROM users WHERE 'id'='$user_id'";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();    
+$sql = "DELETE FROM users WHERE 'userid'='$user_id'";
+  
   
  }
  ?>
