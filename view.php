@@ -4,19 +4,9 @@
 <?php 
     //echo 'This is Index Page';
     $sql = 'SELECT * FROM users';
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-    $rowCount = $stmt->rowCount();
-    $details = $stmt->fetch();
-  
-    print_r ($details);
-
-    while( $details !== false){
-        echo $details['firstname']. '<br>';
-        echo $details['lastname']. '<br>';
-        echo $details['email']. '<br>';
-        echo $details['gender']. '<br>';
+    $statement = $pdo->query($sql);
+    while (($row = $statement->fetch(PDO::FETCH_ASSOC)) !== false) {
+        echo $row['firstname'] . '<br>';
     }
-
 ?>
 
