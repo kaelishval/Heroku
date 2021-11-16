@@ -4,7 +4,7 @@
  if($_GET['userid']!==NULL){
      $user_id = $_GET['userid'];
 
-$sql = "DELETE FROM 'users' WHERE 'userid'='$user_id'";
+$sql = "DELETE FROM users WHERE 'userid'='$user_id'";
   
   
  }
