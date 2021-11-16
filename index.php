@@ -10,7 +10,7 @@
     $email = $_POST['email'];
     $gender =  $_POST['gender'];
     
-   $sql = "INSERT INTO users (firstname,lastname,email,gender) VALUES ('$first_name','$last_name','$email','$gender')";
+   $sql = "INSERT INTO users (firstname,lastname,email,gender) VALUES ($first_name,$last_name,$email,$gender)";
    $stmt = $pdo->prepare($sql);
    $stmt->execute();
    $rowCount = $stmt->rowCount();
