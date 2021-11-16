@@ -3,16 +3,21 @@
 
 
    <?php
-   
- 
-   $sql = "INSERT INTO users (firstname,lastname,email,gender) VALUES ('karl','mauro','kaelishvali','male')";
+   if (isset($_POST['submit'])) {
+
+    $first_name = $_POST['firstname'];
+    $last_name = $_POST['lastname'];
+    $email = $_POST['email'];
+    $gender =  $_POST['gender'];
+    
+   $sql = "INSERT INTO users (firstname,lastname,email,gender) VALUES ('$first_name','$last_name','$email','$gender')";
    $stmt = $pdo->prepare($sql);
    $stmt->execute();
    $rowCount = $stmt->rowCount();
    $details = $stmt->fetch();
   
    print_r ($details);
- 
+   }
    
  ?>
 
@@ -37,7 +42,7 @@
         Gender:<br />
         <input type="radio" name="gender" value="male" />Male
         <input type="radio" name="gender" value="female" />Female <br /><br />
-        <input type="submit" name="submit" value="save" />
+        <input type="submit" name="submit" value="submit" />
       </fieldset>
     </form>
   </body>
