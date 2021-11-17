@@ -6,6 +6,6 @@
 
 $sql = "DELETE FROM users WHERE 'userid'='$user_id'";
   
-  
+print_r ($sql);
  }
  ?>
