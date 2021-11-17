@@ -17,7 +17,7 @@ if ($_POST['submit']=='save') {
 
 <html>
   <body>
-    <h2>CREATE</h2>
+    <h2>UPDATE</h2>
     <form action="" method="POST">
       <fieldset>
         <legend>Insert Info</legend>
