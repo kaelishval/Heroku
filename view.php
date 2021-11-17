@@ -44,10 +44,10 @@ $_SESSION['regName'] = $regValue;
                       <td><?php echo $row['gender']; ?> </td>
                       <td> <form method="get" action="update.php">
                         <input type="hidden" name="regName" value="<?php echo $row['userid']; ?>">
-                        <input type="submit"  name="Update">
+                        <button type="submit" >Update</button>
                         </form>&nbsp;  <form method="get" action="delete.php">
                         <input type="hidden" name="regName" value="<?php echo $row['userid']; ?>">
-                        <input type="submit" name="Delete">
+                        <button type="submit" >Delete</button>
                         </form></td> 
                      
                     </tr>
