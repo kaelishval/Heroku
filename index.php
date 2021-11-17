@@ -4,6 +4,7 @@
 
    <?php
    if ($_POST['submit']=='save') {
+    header("Location: view.php");  
     $user_id = $_POST['userid'];
     $first_name = $_POST['firstname'];
     $last_name = $_POST['lastname'];
