@@ -11,6 +11,8 @@ $regValue = $_GET['regName'];
 $sql = "DELETE FROM users WHERE userid='$regValue'";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();  
-print_r ($sql);
+echo "Entry DELETED";
 
 ?>
+
+<a class="nav-link" href="index.php">BACK</a>
