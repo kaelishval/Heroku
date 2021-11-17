@@ -8,7 +8,7 @@ session_start();
 $regValue = $_GET['regName'];
 
 
-$sql = "DELETE FROM users WHERE 'userid'='$regValue'";
+$sql = "DELETE FROM users WHERE 'userid'='2'";
   
 print_r ($sql);
 
