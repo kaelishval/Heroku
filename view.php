@@ -42,11 +42,11 @@ $_SESSION['regName'] = $regValue;
                       <td><?php echo $row['lastname']; ?> </td>
                       <td><?php echo $row['email']; ?> </td>
                       <td><?php echo $row['gender']; ?> </td>
-                      <td><a class="btn btn-info" href="update.php?id=<?php echo $row['userid']; ?> ">EDIT</a>&nbsp; <a class="btn btn-danger" href="delete.php?id=<?php echo $row['userid']; ?>">Delete</a></td> 
-                      <form method="get" action="delete.php">
+                      <td><a class="btn btn-info" href="update.php?id=<?php echo $row['userid']; ?> ">EDIT</a>&nbsp;  <form method="get" action="delete.php">
                         <input type="hidden" name="regName" value="<?php echo $row['userid']; ?>">
                         <input type="submit">
-                        </form>
+                        </form></td> 
+                     
                     </tr>
                 <?php }
                 
