@@ -45,7 +45,7 @@ $_SESSION['regName'] = $regValue;
                       <td> <form method="get" action="update.php">
                         <input type="hidden" name="regName" value="<?php echo $row['userid']; ?>">
                         <button type="submit" >Update</button>
-                        </form>&nbsp;  <form method="get" action="delete.php">
+                        </form><form method="get" action="delete.php">
                         <input type="hidden" name="regName" value="<?php echo $row['userid']; ?>">
                         <button type="submit" >Delete</button>
                         </form></td> 
