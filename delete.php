@@ -15,4 +15,4 @@ echo "Entry DELETED";
 
 ?>
 
-<a class="nav-link" href="index.php">BACK</a>
+<a class="nav-link" href="view.php">BACK</a>
