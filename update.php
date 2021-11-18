@@ -6,11 +6,12 @@
 session_start();
 
 $regValue = $_GET['regName'];
-
+// $sql = "UPDATE users SET userid='test',firstname='test',lastname='test',email='test',gender='test' WHERE id='$regValue'";
+// print_r ($sql);
 
 
 if ($_POST['submit']=='save') {
-    header("Location: view.php");  
+    // header("Location: view.php");  
     $user_id = $_POST['userid'];
     $first_name = $_POST['firstname'];
     $last_name = $_POST['lastname'];
@@ -23,7 +24,7 @@ if ($_POST['submit']=='save') {
     // $rowCount = $stmt->rowCount();
     // $details = $stmt->fetch();
    
-    // print_r ($sql);
+    print_r ($sql);
 
 }
 
