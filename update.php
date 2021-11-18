@@ -11,8 +11,8 @@ $regValue = $_GET['regName'];
 
 
 if ($_POST['submit']=='save') {
-    // header("Location: view.php");  
-    $user_id = $_POST['userid'];
+    header("Location: view.php");  
+    $user_id = $regValue;
     $first_name = $_POST['firstname'];
     $last_name = $_POST['lastname'];
     $email = $_POST['email'];
@@ -39,9 +39,6 @@ if ($_POST['submit']=='save') {
     <form action="" method="POST">
       <fieldset>
         <legend>Insert Info</legend>
-        User ID:<br />
-        <input type="text" name="userid" />
-        <br />
         First Name:<br />
         <input type="text" name="firstname" />
         <br />
