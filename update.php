@@ -6,7 +6,7 @@
 session_start();
 
 $regValue = $_GET['regName'];
-$sql = "UPDATE users SET userid='$user_id',firstname='$first_name',lastname='$last_name',email='$email',gender='$gender' WHERE id='$regValue'";
+$sql = "UPDATE users SET userid='test',firstname='test',lastname='test',email='test',gender='test' WHERE id='$regValue'";
 print_r ($sql);
 
 
@@ -30,7 +30,7 @@ if ($_POST['submit']=='save') {
 
 ?>
 
-<a class="nav-link" href="view.php">BACK</a>
+
 
 <html>
   <body>
