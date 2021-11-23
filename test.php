@@ -25,11 +25,12 @@ public function create($tableName , array $baseStrings){
 }
 public function update($tableName,array $baseStrings, $ids){
 
-    $sql = "UPDATE $tableName SET firstname='$baseStrings[0]',lastname='$baseStrings[1]',email='$baseStrings[2]',gender='$baseStrings[3]' WHERE id='$ids'";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
+    $sql = "UPDATE $tableName SET firstname='$baseStrings[0]',lastname='$baseStrings[1]',email='$baseStrings[2]',gender='$baseStrings[3]' WHERE userid='$ids'";
+    // $stmt = $pdo->prepare($sql);
+    // $stmt->execute();
    
-    print_r ($sql);
+    // print_r ($sql);
+    echo $sql;
     // echo "$tableName";
     // echo "$baseStrings[0],$baseStrings[1],$baseStrings[2],$baseStrings[3]";
     // echo "$ids";
