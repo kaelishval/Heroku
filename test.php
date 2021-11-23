@@ -3,9 +3,15 @@ class test {
 
 private $str = NULL;
 
-public function newTest(){
+public function newTest($user_id, $first_name,$last_name,$email,$gender){
 
-    echo "michael";
+    
+   $sql = "INSERT INTO users (userid,firstname,lastname,email,gender) VALUES ('$user_id','$first_name','$last_name','$email','$gender')";
+   $stmt = $pdo->prepare($sql);
+   $stmt->execute();
+  
+   print_r ($sql);
+    
 }
 public function bigTest(){
 
@@ -23,6 +29,6 @@ public function scoreTest(){
 
 $test = new test;
 
-echo $test->newTest();
+echo $test->newTest('1','test1','test1','test1','test1');
 
 ?>
