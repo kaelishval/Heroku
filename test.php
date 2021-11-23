@@ -31,6 +31,6 @@ public function scoreTest(){
 
 $test = new test;
 
-echo $test->newTest('1','test1','test1','test1','test1');
+$test->newTest('1','test1','test1','test1','test1');
 
 ?>
