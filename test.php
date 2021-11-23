@@ -8,7 +8,7 @@ private $str = NULL;
 public function create($tableName , array $baseStrings){
 
     
-   $sql = "INSERT INTO $tableName (userid,firstname,lastname,email,gender) VALUES ('$baseStrings[0]','$baseStrings[0]','$baseStrings[0]','$baseStrings[0]','$baseStrings[0]')";
+   $sql = "INSERT INTO $tableName (userid,firstname,lastname,email,gender) VALUES ('$baseStrings[0]','$baseStrings[1]','$baseStrings[2]','$baseStrings[3]','$baseStrings[4]')";
    $stmt = $pdo->prepare($sql);
    $stmt->execute();
   
@@ -46,7 +46,7 @@ public function delete($tableName,$ids){
 
 $test = new test;
 
-$test->create('users',array('test1','test1','test1','test1'));
+$test->create('users',array('1','test1','test1','test1','test1'));
 
 // $test->update('users',array('test2','test3','test2','test2'),1);
 
