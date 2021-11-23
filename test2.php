@@ -22,10 +22,6 @@ class DBProcessingWrapper
    * @return string[] Array of "sfid"s of created records. Length must
    * be equal to $recordNum. "sfid" is a 12-digit string
    */
-  public $array = array();
-  public $F_0;
-  public $F_1;
-  public $F_2;
 
   public function c($tableNameIndex, $baseStrings)
   {
@@ -82,8 +78,10 @@ class DBProcessingWrapper
   public function d($tableName, $ids)
   {
     // 1. Make table name string using $tableNameIndex
-    // 2. Delete records determined by $tableName and $ids
-    
+    // 2. Delete records determined by $tableName and $ids   
+    $sql = "DELETE FROM $tableName WHERE id='$regValue'";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(); 
   }
 
 }
