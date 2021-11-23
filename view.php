@@ -18,6 +18,7 @@ $_SESSION['regName'] = $regValue;
     <div class="container">
         <h2>USERS</h2>
         <a class="nav-link" href="index.php">BACK</a>
+        <a class="nav-link" href="test.php">TEST</a>
     <table class="table">
          <head>
              <tr>
