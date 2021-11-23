@@ -46,9 +46,9 @@ public function delete($tableName,$ids){
 
 $test = new test;
 
-$test->create('users',array('1','kael','mauro','last@gmail.com','male'));
+// $test->create('users',array('1','kael','mauro','last@gmail.com','male'));
 
-// $test->update('users',array('test2','test3','test2','test2'),1);
+$test->update('users',array('test2','test3','test2','test2'),1);
 
 // $test->delete('users','1');
 
