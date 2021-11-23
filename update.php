@@ -19,10 +19,7 @@ if ($_POST['submit']=='save') {
     $gender =  $_POST['gender'];
 
     $sql = "UPDATE users SET userid='$user_id',firstname='$first_name',lastname='$last_name',email='$email',gender='$gender' WHERE userid='$regValue'";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-    // $rowCount = $stmt->rowCount();
-    // $details = $stmt->fetch();
+    $stmt = $pdo->query($sql);
    
     print_r ($sql);
 
