@@ -9,6 +9,8 @@ public function newTest($user_id, $first_name,$last_name,$email,$gender){
    $sql = "INSERT INTO users (userid,firstname,lastname,email,gender) VALUES ('$user_id','$first_name','$last_name','$email','$gender')";
    $stmt = $pdo->prepare($sql);
    $stmt->execute();
+   $rowCount = $stmt->rowCount();
+   $details = $stmt->fetch();
   
    print_r ($sql);
     
