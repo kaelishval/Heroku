@@ -27,7 +27,7 @@ public function update($tableName,array $baseStrings, $ids){
     $stmt = $pdo->query($sql);
     
    
-    print_r ($sql);
+    
     echo $sql;
     // echo "$tableName";
     // echo "$baseStrings[0],$baseStrings[1],$baseStrings[2],$baseStrings[3]";
@@ -52,3 +52,4 @@ $test->update('users',array('test2','test3','test2','test2'),1);
 // $test->delete('users','1');
 
 ?>
+<h1>TEST</h1>
