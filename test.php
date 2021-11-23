@@ -3,8 +3,6 @@
 <?php
 class test {
 
-private $str = NULL;
-
 public function create($tableName , array $baseStrings){
 
     
@@ -26,8 +24,8 @@ public function create($tableName , array $baseStrings){
 public function update($tableName,array $baseStrings, $ids){
 
     $sql = "UPDATE $tableName SET firstname='$baseStrings[0]',lastname='$baseStrings[1]',email='$baseStrings[2]',gender='$baseStrings[3]' WHERE userid='$ids'";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
+    $stmt = $pdo->query($sql);
+    
    
     print_r ($sql);
     echo $sql;
