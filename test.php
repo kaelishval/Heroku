@@ -14,13 +14,13 @@ public function create($tableName , array $baseStrings){
   
    print_r ($sql);
 
-   if($stmt->execute()){
+//    if($stmt->execute()){
 
-    echo "Success";
+//     echo "Success";
 
-    }
+//     }
 
-    echo "Error";
+//     echo "Error";
     
 }
 public function update($tableName,array $baseStrings, $ids){
@@ -46,7 +46,7 @@ public function delete($tableName,$ids){
 
 $test = new test;
 
-$test->create('users',array('1','test1','test1','test1','test1'));
+$test->create('users',array('1','kael','mauro','last@gmail.com','male'));
 
 // $test->update('users',array('test2','test3','test2','test2'),1);
 
