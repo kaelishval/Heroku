@@ -5,7 +5,7 @@
    <?php
    if ($_POST['submit']=='save') {
     header("Location: view.php");  
-    $user_id = $_POST['userid'];
+    $user_id = rand(10,100);
     $first_name = $_POST['firstname'];
     $last_name = $_POST['lastname'];
     $email = $_POST['email'];

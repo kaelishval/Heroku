@@ -8,26 +8,22 @@ public function create($tableName , array $baseStrings){
 
     
    $sql = "INSERT INTO $tableName (userid,firstname,lastname,email,gender) VALUES ('$baseStrings[0]','$baseStrings[1]','$baseStrings[2]','$baseStrings[3]','$baseStrings[4]')";
-   $stmt = $pdo->prepare($sql);
-   $stmt->execute();
-  
+   $stmt = $pdo->query($sql);
    print_r ($sql);
+    
+   if($stmt->execute()){
 
-//    if($stmt->execute()){
+    echo "Success";
 
-//     echo "Success";
+    }
 
-//     }
-
-//     echo "Error";
+    echo "Error";
     
 }
 public function update($tableName,array $baseStrings, $ids){
 
     $sql = "UPDATE $tableName SET firstname='$baseStrings[0]',lastname='$baseStrings[1]',email='$baseStrings[2]',gender='$baseStrings[3]' WHERE userid='$ids'";
     $stmt = $pdo->query($sql);
-    $stmt->execute();
-    
     print_r ($sql);
     // echo "$tableName";
     // echo "$baseStrings[0],$baseStrings[1],$baseStrings[2],$baseStrings[3]";
@@ -36,9 +32,7 @@ public function update($tableName,array $baseStrings, $ids){
 public function delete($tableName,$ids){
 
     $sql = "DELETE FROM $tableName WHERE id='$ids'";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();  
-
+    $stmt = $pdo->query($sql);
     print_r ($sql);
 }
 }
