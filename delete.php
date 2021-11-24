@@ -8,7 +8,7 @@ session_start();
 $regValue = $_GET['regName'];
 
 
-$sql = "DELETE FROM users WHERE userid='$regValue'";
+$sql = "DELETE FROM Salesforce.uzer__c WHERE id='$regValue'";
 $stmt = $pdo->query($sql);
   
 // echo "Entry DELETED";
