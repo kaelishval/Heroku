@@ -1,6 +1,5 @@
 <?php
-include ('config/db.php');
-include ('config/config.php');
+
 
 class test {
 
@@ -43,4 +42,3 @@ $test = new test;
 // $test->delete('users','1');
 
 ?>
-<h1>TEST</h1>
