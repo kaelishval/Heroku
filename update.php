@@ -18,7 +18,7 @@ if ($_POST['submit']=='save') {
     $email = $_POST['email'];
     $gender =  $_POST['gender'];
 
-    $sql = "UPDATE users SET userid='$user_id',firstname='$first_name',lastname='$last_name',email='$email',gender='$gender' WHERE userid='$regValue'";
+    $sql = "UPDATE Salesforce.uzer__c SET id='$user_id',first_name__c='$first_name',last_name__c='$last_name',email__c='$email',gender__c='$gender' WHERE id='$regValue'";
     $stmt = $pdo->query($sql);
    
     print_r ($sql);
