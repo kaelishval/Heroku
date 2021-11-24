@@ -3,7 +3,7 @@
 
 <?php 
     
-    $sql = 'SELECT * FROM users';
+    $sql = 'SELECT * FROM Salesforce.uzer__c';
     $statement = $pdo->query($sql);
    
 ?>
@@ -38,18 +38,18 @@ $_SESSION['regName'] = $regValue;
                 
                 ?>        
                   <tr>
-                     <td><?php echo $row['userid']; ?> </td>
-                      <td><?php echo $row['firstname']; ?> </td>
-                      <td><?php echo $row['lastname']; ?> </td>
-                      <td><?php echo $row['email']; ?> </td>
-                      <td><?php echo $row['gender']; ?> </td>
+                     <td><?php echo $row['id']; ?> </td>
+                      <td><?php echo $row['first_name__c']; ?> </td>
+                      <td><?php echo $row['last_name__c']; ?> </td>
+                      <td><?php echo $row['email__c']; ?> </td>
+                      <td><?php echo $row['gender__c']; ?> </td>
                       <td> 
                         <form method="get" action="update.php">
-                        <input type="hidden" name="regName" value="<?php echo $row['userid']; ?>">
+                        <input type="hidden" name="regName" value="<?php echo $row['id']; ?>">
                         <button type="submit" >Update</button>
                         </form>
                         <form method="get" action="delete.php">
-                        <input type="hidden" name="regName" value="<?php echo $row['userid']; ?>">
+                        <input type="hidden" name="regName" value="<?php echo $row['id']; ?>">
                         <button type="submit" >Delete</button>
                         </form></td> 
                      
