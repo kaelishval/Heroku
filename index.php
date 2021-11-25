@@ -12,9 +12,9 @@
     $gender =  $_POST['gender'];
       
    $sql = "INSERT INTO Salesforce.uzer__c (id,first_name__c,last_name__c,email__c,gender__c) VALUES ('$user_id','$first_name','$last_name','$email','$gender')";
-   $stmt = $pdo->query($sql);
+   $pdo->query($sql);
    
-   print_r ($stmt);
+   
    }
    
  ?>
