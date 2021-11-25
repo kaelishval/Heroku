@@ -49,11 +49,13 @@ public function logResults($pdo)
 print("<br><br> CUD class test:<br>------------------------<br>");
 $tests = new test;
 ///////////////////////////////////////////////////CREATE//////////////////////////////////////////////////////////
-// $tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
+$tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
 ///////////////////////////////////////////////////UPDATE//////////////////////////////////////////////////////////
 // $tests->update($pdo,'Salesforce.uzer__c',array('test1','test1','test1','test1'),4662);
 /////////////////////////////////////////////////DELETE//////////////////////////////////////////////////////////
-$tests->delete($pdo,'Salesforce.uzer__c',9251);
+// $tests->delete($pdo,'Salesforce.uzer__c',9251);
+print("<br><br> CUD class test END:<br>------------------------<br>");
+
 
 print("<br><br> _trigger_log class test: <br>------------------------<br>");
 print("<br>Time triggered:<br><br>");
@@ -61,3 +63,4 @@ $tests->testStartTime($pdo);
 print("<br><br>Test Details:<br><br>");
 $tests->logResults($pdo);
 ?>
+<a class="nav-link" href="view.php">VIEW</a>
