@@ -32,7 +32,7 @@ public function testStartTime($pdo)
   $sql = "SELECT * FROM salesforce._trigger_log ORDER BY id DESC LIMIT 1";
   $stmt = $pdo->query($sql);
   while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
-    return print("Action: " . $row["action"] . " || Processed: " . $row["processed_at"]." || Created: " . $row["created_at"]);
+    return print("Action: " . $row["action"] . " || Updated: " . $row["updated_at"]." || Processed: " . $row["processed_at"]." || Created: " . $row["created_at"] );
   }
 }
 public function logResults($pdo)
