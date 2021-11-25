@@ -35,5 +35,5 @@ print("<br>CREATE:<br><br>");
 print("<br>UPDATE:<br><br>");
 // $tests->update($pdo,'Salesforce.uzer__c',array('test','test','test','test'),404);
 print("<br>DELETE:<br><br>");
-$tests->delete($pdo,'Salesforce.uzer__c',404);
+// $tests->delete($pdo,'Salesforce.uzer__c',404);
 ?>
