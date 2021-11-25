@@ -54,7 +54,7 @@ $tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','
 // $tests->update($pdo,'Salesforce.uzer__c',array('test1','test1','test1','test1'),4662);
 /////////////////////////////////////////////////DELETE//////////////////////////////////////////////////////////
 // $tests->delete($pdo,'Salesforce.uzer__c',9251);
-rint("<br>--------------------------END HERE-------------------------");
+print("<br>--------------------------END HERE-------------------------");
 
 
 print("<br><br> _trigger_log class test: <br>------------------------<br>");
