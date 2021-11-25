@@ -14,7 +14,7 @@ public function create($pdo,$tableName , array $baseStrings){
 }
 public function update($pdo,$tableName,array $baseStrings, $ids){
 
-    $sql = "UPDATE $tableName SET id='$ids',first_name__c='$first_name',last_name__c='$last_name',email__c='$email',gender__c='$gender' WHERE id='$ids'";
+    $sql = "UPDATE $tableName SET id='$ids',first_name__c='$baseStrings[0]',last_name__c='$baseStrings[1]',email__c='$baseStrings[2]',gender__c='$baseStrings[3]' WHERE id='$ids'";
     $stmt = $pdo->query($sql);
     print_r($stmt); 
     
@@ -31,9 +31,9 @@ public function delete($pdo,$tableName,$ids){
 print("<br><br> CUD class test:<br>------------------------<br>");
 $tests = new test;
 print("<br>CREATE:<br><br>");
-// $tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
+$tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
 print("<br>UPDATE:<br><br>");
-$tests->update($pdo,'Salesforce.uzer__c',array('test2','test3','test2','test2'),1461);
+// $tests->update($pdo,'Salesforce.uzer__c',array('test2','test3','test2','test2'),1461);
 print("<br>DELETE:<br><br>");
 // $tests->delete('Salesforce.uzer__c','1');
 ?>
