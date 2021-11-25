@@ -1,15 +1,13 @@
 
+<?php include ('config/db.php')?>
+<?php include ('config/config.php')?>
 <?php
 
-$url = parse_url(getenv("DATABASE_URL"));
-$dsn = sprintf("pgsql:host=%s;dbname=%s", $url["host"], substr($url["path"], 1));
-$pdo = new PDO($dsn, $url["user"], $url["pass"]);
-print("DB Server Version:<br>");
-print_r($pdo->getAttribute(PDO::ATTR_SERVER_VERSION));
+
 
 class test {
 
-public function create($tableName , array $baseStrings){
+public function create($pdo,$tableName , array $baseStrings){
    
    $user_id = rand(10,10000);
     
@@ -41,7 +39,7 @@ public function delete($tableName,$ids){
 print("<br><br> CUD class test:<br>------------------------<br>");
 $tests = new test;
 print("<br>CREATE:<br><br>");
-$tests->create('Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
+$tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
 print("<br>UPDATE:<br><br>");
 // $tests->update('Salesforce.uzer__c',array('test2','test3','test2','test2'),1);
 print("<br>DELETE:<br><br>");
