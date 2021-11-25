@@ -31,9 +31,9 @@ public function delete($pdo,$tableName,$ids){
 print("<br><br> CUD class test:<br>------------------------<br>");
 $tests = new test;
 print("<br>CREATE:<br><br>");
-// $tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
+$tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
 print("<br>UPDATE:<br><br>");
-$tests->update($pdo,'Salesforce.uzer__c',array('test','test','test','test'),404);
+// $tests->update($pdo,'Salesforce.uzer__c',array('test','test','test','test'),404);
 print("<br>DELETE:<br><br>");
-// $tests->delete('Salesforce.uzer__c',404);
+// $tests->delete($pdo,'Salesforce.uzer__c',404);
 ?>
