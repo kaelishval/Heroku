@@ -11,7 +11,8 @@ public function create($pdo,$tableName , array $baseStrings){
    $sql = "INSERT INTO $tableName (id,first_name__c,last_name__c,email__c,gender__c) VALUES ('$user_id','$baseStrings[0]','$baseStrings[1]','$baseStrings[2]','$baseStrings[3]')";
    $stmt = $pdo->query($sql);
    print_r($sql);
-   testStartTime($pdo); 
+   $init = new test;
+   $init->testStartTime($pdo); 
 }
 public function update($pdo,$tableName,array $baseStrings, $ids){
 
