@@ -2,9 +2,6 @@
 <?php include ('config/db.php')?>
 <?php include ('config/config.php')?>
 <?php
-
-
-
 class test {
 
 public function create($pdo,$tableName , array $baseStrings){
@@ -12,24 +9,17 @@ public function create($pdo,$tableName , array $baseStrings){
    $user_id = rand(10,10000);
     
    $sql = "INSERT INTO $tableName (id,first_name__c,last_name__c,email__c,gender__c) VALUES ('$user_id','$baseStrings[0]','$baseStrings[1]','$baseStrings[2]','$baseStrings[3]')";
-   $pdo->query($sql);
-   
-   
-//    if($stmt->execute()){
-//     $ids = $user_id;
-//     return $ids;
-//     }
-//     echo "Error";
-    
+   $stmt = $pdo->query($sql);
+   print_r($stmt); 
 }
-public function update($tableName,array $baseStrings, $ids){
+public function update($pdo,$tableName,array $baseStrings, $ids){
 
     $sql = "UPDATE $tableName SET id='$user_id',first_name__c='$first_name',last_name__c='$last_name',email__c='$email',gender__c='$gender' WHERE id='$ids'";
     $pdo->query($sql);
     
   
 }
-public function delete($tableName,$ids){
+public function delete($pdo,$tableName,$ids){
 
     $sql = "DELETE FROM $tableName WHERE id='$ids'";
     $pdo->query($sql);
