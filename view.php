@@ -5,7 +5,7 @@
     
     $sql = 'SELECT * FROM Salesforce.uzer__c';
     $statement = $pdo->query($sql);
-    print_r($statement);
+    
 ?>
 <?php
 
