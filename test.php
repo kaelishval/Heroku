@@ -31,6 +31,7 @@ public function testStartTime($pdo)
 {
   $sql = "SELECT * FROM salesforce._trigger_log ORDER BY id DESC LIMIT 1";
   $stmt = $pdo->query($sql);
+  print_r($stmt); 
   foreach ($stmt as $row) {
     return print("Action: " . $row["action"] . " || " . $row["processed_at"]);
   }
@@ -39,6 +40,7 @@ public function logResults($pdo)
   {
     $sql = "SELECT * FROM salesforce._trigger_log ORDER BY id DESC LIMIT 1";
     $stmt = $pdo->query($sql);
+
     foreach ($stmt as $row) {
       return print("ID: " . $row["id"] . " || " . "Table Name: " . $row["table_name"] . " || " .
         "Action: " . $row["action"] . " || " . "State: " . $row["state"] . "<br>Values: " . $row["values"] . "<br>");
