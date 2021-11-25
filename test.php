@@ -22,7 +22,13 @@ public function update($pdo,$tableName,array $baseStrings, $ids){
 
     $sql = "UPDATE $tableName SET id='$ids',first_name__c='$baseStrings[0]',last_name__c='$baseStrings[1]',email__c='$baseStrings[2]',gender__c='$baseStrings[3]' WHERE id='$ids'";
     $stmt = $pdo->query($sql);
-    print_r($sql); 
+    $init = new test;
+    print("<br><br> _trigger_log class test: <br>------------------------<br>");
+    print("<br>Time triggered:<br><br>");
+    $init->testStartTime($pdo); 
+    print("<br><br>Test Details:<br><br>");
+    $init->logResults($pdo); 
+    print("<br>--------------------------END HERE-------------------------<br>"); 
     
   
 }
@@ -30,7 +36,13 @@ public function delete($pdo,$tableName,$ids){
 
     $sql = "DELETE FROM $tableName WHERE id='$ids'";
     $stmt = $pdo->query($sql);
-    print_r($sql); 
+    $init = new test;
+    print("<br><br> _trigger_log class test: <br>------------------------<br>");
+    print("<br>Time triggered:<br><br>");
+    $init->testStartTime($pdo); 
+    print("<br><br>Test Details:<br><br>");
+    $init->logResults($pdo); 
+    print("<br>--------------------------END HERE-------------------------<br>"); 
 
 }
 public function testStartTime($pdo)
@@ -52,7 +64,6 @@ public function logResults($pdo)
     }
   }
 }
-print("<br><br> CUD class test:<br>------------------------<br>");
 $tests = new test;
 ///////////////////////////////////////////////////CREATE//////////////////////////////////////////////////////////
 $tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
