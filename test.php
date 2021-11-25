@@ -10,13 +10,13 @@ public function create($pdo,$tableName , array $baseStrings){
     
    $sql = "INSERT INTO $tableName (id,first_name__c,last_name__c,email__c,gender__c) VALUES ('$user_id','$baseStrings[0]','$baseStrings[1]','$baseStrings[2]','$baseStrings[3]')";
    $stmt = $pdo->query($sql);
-   print_r($stmt); 
+   print_r($sql); 
 }
 public function update($pdo,$tableName,array $baseStrings, $ids){
 
     $sql = "UPDATE $tableName SET id='$ids',first_name__c='$baseStrings[0]',last_name__c='$baseStrings[1]',email__c='$baseStrings[2]',gender__c='$baseStrings[3]' WHERE id='$ids'";
     $stmt = $pdo->query($sql);
-    print_r($stmt); 
+    print_r($sql); 
     
   
 }
@@ -24,7 +24,7 @@ public function delete($pdo,$tableName,$ids){
 
     $sql = "DELETE FROM $tableName WHERE id='$ids'";
     $stmt = $pdo->query($sql);
-    print_r($stmt); 
+    print_r($sql); 
 
 }
 public function testStartTime($pdo)
@@ -32,13 +32,7 @@ public function testStartTime($pdo)
   $sql = "SELECT * FROM salesforce._trigger_log ORDER BY id DESC LIMIT 1";
   $stmt = $pdo->query($sql);
   while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
-    if($row["action"]=="INSERT"){
-        return print("Action: " . $row["action"] . " || " . $row["created_at"]);
-    }else if($row["action"]=="UPDATE"){
-        return print("Action: " . $row["action"] . " || " . $row["updated_at"]);
-    }else{
-        return print("Action: " . $row["action"] . " || " . $row["processed_at"]);
-    }
+    return print("Action: " . $row["action"] . " || Updated: " . $row["updated_at"]." || Processed: " . $row["processed_at"]." || Created: " . $row["created_at"] );
   }
 }
 public function logResults($pdo)
@@ -61,6 +55,7 @@ $tests->update($pdo,'Salesforce.uzer__c',array('test','test','test','test'),4662
 print("<br>DELETE:<br><br>");
 // $tests->delete($pdo,'Salesforce.uzer__c',404);
 print("<br>Time triggered:<br><br>");
+print("<br><br> _trigger_log class test: <br>------------------------<br>");
 $tests->testStartTime($pdo);
 print("<br><br>Test Details:<br><br>");
 $tests->logResults($pdo);
