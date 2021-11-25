@@ -57,5 +57,5 @@ print("<br>DELETE:<br><br>");
 print("<br>Time triggered:<br><br>");
 $tests->testStartTime($pdo);
 print("<br><br>Test Details:<br><br>");
-$triggerLog->logResults($pdo);
+$tests->logResults($pdo);
 ?>
