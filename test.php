@@ -10,9 +10,13 @@ public function create($pdo,$tableName , array $baseStrings){
     
    $sql = "INSERT INTO $tableName (id,first_name__c,last_name__c,email__c,gender__c) VALUES ('$user_id','$baseStrings[0]','$baseStrings[1]','$baseStrings[2]','$baseStrings[3]')";
    $stmt = $pdo->query($sql);
-   print_r($sql);
    $init = new test;
+   print("<br><br> _trigger_log class test: <br>------------------------<br>");
+   print("<br>Time triggered:<br><br>");
    $init->testStartTime($pdo); 
+   print("<br><br>Test Details:<br><br>");
+   $init->logResults($pdo); 
+   print("<br>--------------------------END HERE-------------------------<br>");
 }
 public function update($pdo,$tableName,array $baseStrings, $ids){
 
@@ -56,15 +60,5 @@ $tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','
 // $tests->update($pdo,'Salesforce.uzer__c',array('test1','test1','test1','test1'),4662);
 /////////////////////////////////////////////////DELETE//////////////////////////////////////////////////////////
 // $tests->delete($pdo,'Salesforce.uzer__c',9251);
-print("<br>--------------------------END HERE-------------------------<br>");
-
-
-print("<br><br> _trigger_log class test: <br>------------------------<br>");
-print("<br>Time triggered:<br><br>");
-// $tests->testStartTime($pdo);
-print("<br><br>Test Details:<br><br>");
-$tests->logResults($pdo);
-
-print("<br>--------------------------END HERE-------------------------<br>");
 ?>
 <a class="nav-link" href="view.php">VIEW</a>
