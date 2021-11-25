@@ -34,6 +34,10 @@ public function testStartTime($pdo)
   while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
     if($row["action"]=="INSERT"){
         return print("Action: " . $row["action"] . " || " . $row["created_at"]);
+    }else if($row["action"]=="UPDATE"){
+        return print("Action: " . $row["action"] . " || " . $row["updated_at"]);
+    }else{
+        return print("Action: " . $row["action"] . " || " . $row["processed_at"]);
     }
   }
 }
@@ -51,9 +55,9 @@ public function logResults($pdo)
 print("<br><br> CUD class test:<br>------------------------<br>");
 $tests = new test;
 print("<br>CREATE:<br><br>");
-$tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
+// $tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
 print("<br>UPDATE:<br><br>");
-// $tests->update($pdo,'Salesforce.uzer__c',array('test','test','test','test'),9234);
+$tests->update($pdo,'Salesforce.uzer__c',array('test','test','test','test'),4662);
 print("<br>DELETE:<br><br>");
 // $tests->delete($pdo,'Salesforce.uzer__c',404);
 print("<br>Time triggered:<br><br>");
