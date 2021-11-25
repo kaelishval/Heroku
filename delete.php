@@ -9,7 +9,7 @@ $regValue = $_GET['regName'];
 
 
 $sql = "DELETE FROM Salesforce.uzer__c WHERE id='$regValue'";
-$stmt = $pdo->query($sql);
+$pdo->query($sql);
   
 // echo "Entry DELETED";
 header("Location: view.php"); 
