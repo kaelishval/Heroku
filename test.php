@@ -21,8 +21,8 @@ public function create($tableName , array $baseStrings){
 public function update($tableName,array $baseStrings, $ids){
 
     $sql = "UPDATE $tableName SET id='$user_id',first_name__c='$first_name',last_name__c='$last_name',email__c='$email',gender__c='$gender' WHERE id='$ids'";
-    $stmt = $pdo->query($sql);
-    print_r ($sql);
+    $this->pdo->query($sql);
+    
   
 }
 public function delete($tableName,$ids){
