@@ -8,7 +8,7 @@ public function create($tableName , array $baseStrings){
    $user_id = rand(10,10000);
     
    $sql = "INSERT INTO $tableName (id,first_name__c,last_name__c,email__c,gender__c) VALUES ('$user_id','$baseStrings[0]','$baseStrings[1]','$baseStrings[2]','$baseStrings[3]')";
-   $this->pdo->query($sql);
+   $pdo->query($sql);
    
    
 //    if($stmt->execute()){
@@ -21,15 +21,15 @@ public function create($tableName , array $baseStrings){
 public function update($tableName,array $baseStrings, $ids){
 
     $sql = "UPDATE $tableName SET id='$user_id',first_name__c='$first_name',last_name__c='$last_name',email__c='$email',gender__c='$gender' WHERE id='$ids'";
-    $this->pdo->query($sql);
+    $pdo->query($sql);
     
   
 }
 public function delete($tableName,$ids){
 
     $sql = "DELETE FROM $tableName WHERE id='$ids'";
-    $stmt = $pdo->query($sql);
-    print_r ($sql);
+    $pdo->query($sql);
+
 }
 }
 print("<br><br> CUD class test:<br>------------------------<br>");
