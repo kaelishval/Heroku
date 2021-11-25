@@ -1,8 +1,6 @@
 <?php include ('config/db.php')?>
 <?php include ('config/config.php')?>
 <?php
-
-
 class test {
 
 public function create($tableName , array $baseStrings){

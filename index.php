@@ -4,16 +4,16 @@
 
    <?php
    if ($_POST['submit']=='save') {
-    header("Location: view.php");  
+    header("Location: view.php"); 
     $user_id = rand(10,10000);
     $first_name = $_POST['firstname'];
     $last_name = $_POST['lastname'];
     $email = $_POST['email'];
     $gender =  $_POST['gender'];
-    
+      
    $sql = "INSERT INTO Salesforce.uzer__c (id,first_name__c,last_name__c,email__c,gender__c) VALUES ('$user_id','$first_name','$last_name','$email','$gender')";
    $stmt = $pdo->query($sql);
-    
+   
    print_r ($sql);
    }
    
