@@ -27,11 +27,30 @@ public function delete($pdo,$tableName,$ids){
     print_r($stmt); 
 
 }
+public function testStartTime($pdo)
+{
+  $sql = "SELECT * FROM salesforce._trigger_log ORDER BY id DESC LIMIT 1";
+  $stmt = $pdo->query($sql);
+  foreach ($stmt as $row) {
+    return print("Action: " . $row["action"] . " || " . $row["processed_at"]);
+  }
+}
+public function logResults($pdo)
+  {
+    $sql = "SELECT * FROM salesforce._trigger_log ORDER BY id DESC LIMIT 1";
+    $stmt = $pdo->query($sql);
+    foreach ($stmt as $row) {
+      return print("ID: " . $row["id"] . " || " . "Table Name: " . $row["table_name"] . " || " .
+        "Action: " . $row["action"] . " || " . "State: " . $row["state"] . "<br>Values: " . $row["values"] . "<br>");
+    }
+  }
 }
 print("<br><br> CUD class test:<br>------------------------<br>");
 $tests = new test;
 print("<br>CREATE:<br><br>");
-// $tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
+$tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
+print("<br>Time triggered:<br><br>");
+$tests->testStartTime($pdo);
 print("<br>UPDATE:<br><br>");
 // $tests->update($pdo,'Salesforce.uzer__c',array('test','test','test','test'),404);
 print("<br>DELETE:<br><br>");
