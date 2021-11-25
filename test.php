@@ -53,7 +53,7 @@ $tests = new test;
 ///////////////////////////////////////////////////UPDATE//////////////////////////////////////////////////////////
 // $tests->update($pdo,'Salesforce.uzer__c',array('test1','test1','test1','test1'),4662);
 /////////////////////////////////////////////////DELETE//////////////////////////////////////////////////////////
-$tests->delete($pdo,'Salesforce.uzer__c',4662);
+$tests->delete($pdo,'Salesforce.uzer__c',9251);
 
 print("<br><br> _trigger_log class test: <br>------------------------<br>");
 print("<br>Time triggered:<br><br>");
