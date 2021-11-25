@@ -32,7 +32,7 @@ public function testStartTime($pdo)
   $sql = "SELECT * FROM salesforce._trigger_log ORDER BY id DESC LIMIT 1";
   $stmt = $pdo->query($sql);
   while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
-    return print("Action: " . $row["action"] . " || Updated: " . $row["updated_at"]." || Processed: " . $row["processed_at"]." || Created: " . $row["created_at"] );
+    return print("Action: " . $row["action"] . " || " . $row["processed_at"]);
   }
 }
 public function logResults($pdo)
@@ -54,8 +54,9 @@ $tests = new test;
 // $tests->update($pdo,'Salesforce.uzer__c',array('test1','test1','test1','test1'),4662);
 /////////////////////////////////////////////////DELETE//////////////////////////////////////////////////////////
 $tests->delete($pdo,'Salesforce.uzer__c',4662);
-print("<br>Time triggered:<br><br>");
+
 print("<br><br> _trigger_log class test: <br>------------------------<br>");
+print("<br>Time triggered:<br><br>");
 $tests->testStartTime($pdo);
 print("<br><br>Test Details:<br><br>");
 $tests->logResults($pdo);
