@@ -35,7 +35,7 @@ public function delete($tableName,$ids){
 print("<br><br> CUD class test:<br>------------------------<br>");
 $test = new test;
 print("<br>CREATE:<br><br>");
-$test->create('Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
+$test->create(Salesforce.uzer__c,array('kael','mauro','last@gmail.com','male'));
 print("<br>UPDATE:<br><br>");
 // $test->update('Salesforce.uzer__c',array('test2','test3','test2','test2'),1);
 print("<br>DELETE:<br><br>");
