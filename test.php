@@ -20,7 +20,7 @@ public function create($tableName , array $baseStrings){
 }
 public function update($tableName,array $baseStrings, $ids){
 
-    $sql = "UPDATE $tableName SET firstname='$baseStrings[0]',lastname='$baseStrings[1]',email='$baseStrings[2]',gender='$baseStrings[3]' WHERE userid='$ids'";
+    $sql = "UPDATE $tableName SET id='$user_id',first_name__c='$first_name',last_name__c='$last_name',email__c='$email',gender__c='$gender' WHERE id='$ids'";
     $stmt = $pdo->query($sql);
     print_r ($sql);
   
@@ -37,8 +37,8 @@ $test = new test;
 
 $test->create('Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
 
-// $test->update('users',array('test2','test3','test2','test2'),1);
+// $test->update('Salesforce.uzer__c',array('test2','test3','test2','test2'),1);
 
-// $test->delete('users','1');
+// $test->delete('Salesforce.uzer__c','1');
 
 ?>
