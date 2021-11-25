@@ -1,29 +1,6 @@
 <?php
-
-
-
-$host = "ec2-18-235-154-252.compute-1.amazonaws.com";
-$user = "ajpiganlxdmpab";
-$password = "f57de192a79b0d042533cd7772a5ac6e66d70bf6cb4c7b18acac64b26a2e03e2";
-$dbname = "db4vttbnb1juur";
-$port = "5432";
-
-try{
-  //Set DSN data source name
-    $dsn = "pgsql:host=" . $host . ";port=" . $port .";dbname=" . $dbname . ";user=" . $user . ";password=" . $password . ";";
-
-
-  //create a pdo instance
-  $pdo = new PDO($dsn, $user, $password);
-  $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
-  $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-echo 'Connection failed: ' . $e->getMessage();
-}
-  
-
+include ('config/db.php');
+include ('config/config.php');
 class test {
 
 public function create($tableName , array $baseStrings){
@@ -31,7 +8,7 @@ public function create($tableName , array $baseStrings){
    $user_id = rand(10,10000);
     
    $sql = "INSERT INTO $tableName (id,first_name__c,last_name__c,email__c,gender__c) VALUES ('$user_id','$baseStrings[0]','$baseStrings[1]','$baseStrings[2]','$baseStrings[3]')";
-   $stmt = $pdo->query($sql);
+   
    print_r ($sql);
    
 //    if($stmt->execute()){
