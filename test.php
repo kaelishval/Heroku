@@ -40,7 +40,7 @@ public function logResults($pdo)
     $sql = "SELECT * FROM salesforce._trigger_log ORDER BY id DESC LIMIT 1";
     $stmt = $pdo->query($sql);
 
-    foreach ($stmt as $row) {
+    while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
       return print("ID: " . $row["id"] . " || " . "Table Name: " . $row["table_name"] . " || " .
         "Action: " . $row["action"] . " || " . "State: " . $row["state"] . "<br>Values: " . $row["values"] . "<br>");
     }
@@ -56,6 +56,6 @@ print("<br>DELETE:<br><br>");
 // $tests->delete($pdo,'Salesforce.uzer__c',404);
 print("<br>Time triggered:<br><br>");
 $tests->testStartTime($pdo);
-// print("<br><br>Test Details:<br><br>");
-// $triggerLog->logResults($pdo);
+print("<br><br>Test Details:<br><br>");
+$triggerLog->logResults($pdo);
 ?>
