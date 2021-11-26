@@ -66,10 +66,10 @@ public function logResults($pdo)
 }
 $tests = new test;
 ///////////////////////////////////////////////////CREATE//////////////////////////////////////////////////////////
-// $tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
+$tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
 ///////////////////////////////////////////////////UPDATE//////////////////////////////////////////////////////////
 // $tests->update($pdo,'Salesforce.uzer__c',array('test1','test1','test1','test1'),8833);
 /////////////////////////////////////////////////DELETE//////////////////////////////////////////////////////////
-$tests->delete($pdo,'Salesforce.uzer__c',2278);
+// $tests->delete($pdo,'Salesforce.uzer__c',2278);
 ?>
 <a class="nav-link" href="view.php">VIEW</a>
