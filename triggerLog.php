@@ -9,7 +9,7 @@ class TriggerLogResults
 
   public function logStartTime($pdo)
   {
-    sleep(3);
+   
     $stmt = $pdo->query($this->sql);
      while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
       return print("Action: " . $row["action"] . " || " . "Start time: " . $row["created_at"]);
