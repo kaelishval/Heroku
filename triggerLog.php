@@ -9,6 +9,7 @@ class TriggerLogResults
 
   public function logStartTime($pdo)
   {
+    sleep(3);
     $stmt = $pdo->query($this->sql);
     foreach ($stmt as $row) {
       return print("Action: " . $row["action"] . " || " . "Start time: " . $row["created_at"]);
@@ -17,7 +18,7 @@ class TriggerLogResults
 
   public function logEndTime($pdo)
   {
-    sleep(2);
+    sleep(3);
     $stmt = $pdo->query($this->sql);
     foreach ($stmt as $row) {
       return print("Action: " . $row["action"] . " || " . "End time: " . $row["processed_at"]);
@@ -26,7 +27,7 @@ class TriggerLogResults
 
   public function totalTimeProcessed($pdo)
   {
-    sleep(2);
+    sleep(3);
     $stmt = $pdo->query($this->sql);
     foreach ($stmt as $row) {
       $processedTime = strtotime($row["processed_at"]);
@@ -39,7 +40,7 @@ class TriggerLogResults
 
   public function logResults($pdo)
   {
-    sleep(2);
+    sleep(3);
     $stmt = $pdo->query($this->sql);
     foreach ($stmt as $row) {
       return print("ID: " . $row["id"] . " || " . "Table Name: " . $row["table_name"] . " || " .
