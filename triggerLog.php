@@ -29,7 +29,7 @@ class TriggerLogResults
   {
     sleep(3);
     $stmt = $pdo->query($this->sql);
-    foreach ($stmt as $row) {
+    while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
       $processedTime = strtotime($row["processed_at"]);
       $createdTime = strtotime($row["created_at"]);
       $totalTime = $processedTime - $createdTime;
