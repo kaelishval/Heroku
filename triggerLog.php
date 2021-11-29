@@ -9,9 +9,9 @@ class TriggerLogResults
 
   public function logStartTime($pdo)
   {
-   
+
     $stmt = $pdo->query($this->sql);
-     while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
+    while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
       return print("Action: " . $row["action"] . " || " . "Start time: " . $row["created_at"]);
     }
   }
@@ -30,11 +30,16 @@ class TriggerLogResults
     sleep(3);
     $stmt = $pdo->query($this->sql);
     while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
-      $processedTime = strtotime($row["processed_at"]);
-      $createdTime = strtotime($row["created_at"]);
-      $totalTime = $processedTime - $createdTime;
-      $actualTime = $totalTime / 86400;
-      return print($actualTime);
+      $processedTime = array();
+      $processedTime = explode(":", $row['processed_at']);
+      $processedAt = array();
+      $processedAt = explode("+", $processedTime[2]);
+      $createdTime = array();
+      $createdTime = explode(":", $row['created_at']);
+      $createdAt = array();
+      $createdAt = explode("+", $createdTime[2]);
+      $totalTimeProcessed = floatval($processedAt[0]) - floatval($createdAt[0]);
+      return print(number_format($totalTimeProcessed, 3));
     }
   }
 
