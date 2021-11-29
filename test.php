@@ -87,10 +87,14 @@ class test
 }
 $tests = new test;
 ///////////////////////////////////////////////////CREATE//////////////////////////////////////////////////////////
-// $tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
+$tests->create($pdo,'Salesforce.uzer__c',array('kael','mauro','last@gmail.com','male'));
 ///////////////////////////////////////////////////UPDATE//////////////////////////////////////////////////////////
-// $tests->update($pdo,'Salesforce.uzer__c',array('test1','test1','test1','test1'),8833);
+// $tests->update($pdo,'Salesforce.uzer__c',array('test1','test1','test1','test1'),1651);
 /////////////////////////////////////////////////DELETE//////////////////////////////////////////////////////////
+<<<<<<< HEAD
 $tests->delete($pdo, 'Salesforce.uzer__c', 8833);
+=======
+// $tests->delete($pdo,'Salesforce.uzer__c',1649);
+>>>>>>> 913576f0a936597477af4739ad3aa11fe46116b3
 ?>
 <a class="nav-link" href="view.php">VIEW</a>
