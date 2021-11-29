@@ -11,7 +11,7 @@ class TriggerLogResults
   {
     sleep(3);
     $stmt = $pdo->query($this->sql);
-    foreach ($stmt as $row) {
+     while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
       return print("Action: " . $row["action"] . " || " . "Start time: " . $row["created_at"]);
     }
   }
