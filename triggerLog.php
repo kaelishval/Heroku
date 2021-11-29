@@ -20,7 +20,7 @@ class TriggerLogResults
   {
     sleep(3);
     $stmt = $pdo->query($this->sql);
-    foreach ($stmt as $row) {
+    while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
       return print("Action: " . $row["action"] . " || " . "End time: " . $row["processed_at"]);
     }
   }
@@ -42,7 +42,7 @@ class TriggerLogResults
   {
     sleep(3);
     $stmt = $pdo->query($this->sql);
-    foreach ($stmt as $row) {
+    while (($row = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) {
       return print("ID: " . $row["id"] . " || " . "Table Name: " . $row["table_name"] . " || " .
         "Action: " . $row["action"] . " || " . "" .
         "State: " . $row["state"] . "<br>Values: " . $row["values"] . "<br>");
